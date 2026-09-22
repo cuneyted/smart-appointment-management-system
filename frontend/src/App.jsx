@@ -1,122 +1,143 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="app">
+      <nav className="navbar">
+        <div className="logo">SmartBook</div>
+
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
+
+        <div className="nav-actions">
+          <button className="btn btn-outline">Log in</button>
+          <button className="btn btn-primary">Get Started</button>
+        </div>
+      </nav>
+
+      <main>
+        <section className="hero" id="home">
+          <div className="hero-content">
+            <span className="badge">Simple. Fast. Convenient.</span>
+
+            <h1>
+              Book your appointments
+              <span> with ease.</span>
+            </h1>
+
+            <p>
+              SmartBook is a modern appointment management platform that
+              makes scheduling simple for customers and service providers.
+            </p>
+
+            <div className="hero-actions">
+              <button className="btn btn-primary btn-large">
+                Book an Appointment
+              </button>
+              <button className="btn btn-secondary btn-large">
+                Explore Services
+              </button>
+            </div>
+
+            <div className="hero-stats">
+              <div>
+                <strong>24/7</strong>
+                <small>Online Booking</small>
+              </div>
+              <div>
+                <strong>Easy</strong>
+                <small>Appointment Management</small>
+              </div>
+              <div>
+                <strong>Secure</strong>
+                <small>User Authentication</small>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-card">
+            <div className="calendar-header">
+              <div>
+                <small>Upcoming appointment</small>
+                <h3>September 24, 2026</h3>
+              </div>
+              <div className="calendar-icon">24</div>
+            </div>
+
+            <div className="appointment-item">
+              <div className="appointment-time">10:30</div>
+              <div>
+                <strong>Consultation</strong>
+                <p>Professional Service</p>
+              </div>
+              <span className="status">Confirmed</span>
+            </div>
+
+            <div className="appointment-item">
+              <div className="appointment-time">14:00</div>
+              <div>
+                <strong>Follow-up Meeting</strong>
+                <p>Online Session</p>
+              </div>
+              <span className="status pending">Pending</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="features" id="services">
+          <div className="section-heading">
+            <span className="section-label">FEATURES</span>
+            <h2>Everything you need to manage appointments</h2>
+            <p>
+              A simple and reliable system designed for both users and
+              administrators.
+            </p>
+          </div>
+
+          <div className="feature-grid">
+            <article className="feature-card">
+              <div className="feature-number">01</div>
+              <h3>Easy Booking</h3>
+              <p>
+                Users can browse available services and book appointments
+                in just a few steps.
+              </p>
+            </article>
+
+            <article className="feature-card">
+              <div className="feature-number">02</div>
+              <h3>Appointment Management</h3>
+              <p>
+                View, cancel and manage upcoming appointments from one
+                personal dashboard.
+              </p>
+            </article>
+
+            <article className="feature-card">
+              <div className="feature-number">03</div>
+              <h3>Admin Dashboard</h3>
+              <p>
+                Administrators can manage services, users and appointments
+                through a dedicated panel.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact">
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+          <strong>SmartBook</strong>
+          <p>Smart appointment management for modern services.</p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <span>© 2026 SmartBook</span>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
