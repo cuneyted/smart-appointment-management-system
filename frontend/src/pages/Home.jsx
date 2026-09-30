@@ -17,7 +17,7 @@ function Home() {
 
         <div className="nav-actions">
           <button className="btn btn-outline" onClick={() => navigate("/login")}>Log in</button>
-          <button className="btn btn-primary" onClick={() => navigate("/login")}>Get Started</button>
+          <button className="btn btn-primary" onClick={() => navigate("/register")}>Get Started</button>
         </div>
       </nav>
 
