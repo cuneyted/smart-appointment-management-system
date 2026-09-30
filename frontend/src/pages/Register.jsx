@@ -30,7 +30,7 @@ function Register() {
         throw new Error(data.message || "Registration failed.");
       }
 
-      navigate("/login");
+      const loginResponse = await fetch("http://localhost:5000/api/auth/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(formData) }); const loginData = await loginResponse.json(); localStorage.setItem("token", loginData.token); localStorage.setItem("user", JSON.stringify(loginData.user)); navigate("/dashboard");
     } catch (error) {
       setError(error.message);
     } finally {

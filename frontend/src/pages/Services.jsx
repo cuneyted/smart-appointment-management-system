@@ -39,16 +39,16 @@ function Services() {
   }, []);
 
   function handleBookClick(service) {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-      navigate("/login");
-      return;
-    }
-
     setSelectedService(service);
     setBookingError("");
     setBookingSuccess("");
+
+    setTimeout(() => {
+      const bookingSection = document.querySelector(".booking-section");
+      if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   }
 
   function handleChange(event) {

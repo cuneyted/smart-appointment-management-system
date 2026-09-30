@@ -23,7 +23,7 @@ router.post("/", authenticateToken, async (req, res) => {
     }
 
     const existing = await pool.query(
-      "SELECT id FROM appointments WHERE date = $1 AND time = $2 AND status <> 'cancelled'",
+      "SELECT id FROM appointments WHERE appointment_date = $1 AND appointment_time = $2 AND status <> 'cancelled'",
       [date, time]
     );
 
@@ -32,27 +32,27 @@ router.post("/", authenticateToken, async (req, res) => {
     }
 
     const result = await pool.query(
-      "INSERT INTO appointments (user_id, service_id, date, time, notes) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [req.user.id, serviceId, date, time, notes || null]
+      "INSERT INTO appointments (user_id, service_id, appointment_date, appointment_time, notes) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [req.user.userId, serviceId, date, time, notes || null]
     );
 
     res.status(201).json(result.rows[0]);
   } catch (error) {
     console.error("Create appointment error:", error.message);
-    res.status(500).json({ message: "Could not create appointment." });
+    res.status(500).json({ message: error.message });
   }
 });
 
 router.get("/my", authenticateToken, async (req, res) => {
   try {
     const result = await pool.query(
-      `SELECT a.id, a.date, a.time, a.status, a.notes,
+      `SELECT a.id, a.appointment_date AS date, a.appointment_time AS time, a.status, a.notes,
               s.name AS service_name, s.duration_minutes, s.price
        FROM appointments a
        JOIN services s ON a.service_id = s.id
        WHERE a.user_id = $1
        ORDER BY a.date ASC, a.time ASC`, 
-      [req.user.id]
+      [req.user.userId]
     );
 
     res.json(result.rows);
@@ -65,7 +65,7 @@ router.get("/my", authenticateToken, async (req, res) => {
 router.get("/", authenticateToken, requireAdmin, async (req, res) => {
   try {
     const result = await pool.query(
-      `SELECT a.id, a.date, a.time, a.status, a.notes,
+      `SELECT a.id, a.appointment_date AS date, a.appointment_time AS time, a.status, a.notes,
               u.name AS customer_name, u.email AS customer_email,
               s.name AS service_name, s.duration_minutes, s.price
        FROM appointments a
