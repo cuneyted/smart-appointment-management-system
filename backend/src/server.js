@@ -4,6 +4,7 @@ const helmet = require("helmet");
 require("dotenv").config();
 
 const pool = require("./db");
+const authRoutes = require("../routes/auth");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,6 +12,8 @@ const PORT = process.env.PORT || 5000;
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 app.get("/api/health", async (req, res) => {
   try {
@@ -23,7 +26,6 @@ app.get("/api/health", async (req, res) => {
     });
   } catch (error) {
     console.error("Database error:", error.message);
-
     res.status(500).json({
       status: "error",
       message: "Database connection failed."
