@@ -56,3 +56,131 @@
     grid-template-columns: 1fr;
   }
 }
+
+.dashboard-appointments {
+  margin-top: 30px;
+  padding: 30px;
+  background: white;
+  border: 1px solid #e3e7ee;
+  border-radius: 18px;
+}
+
+.dashboard-section-heading span {
+  color: #6d7890;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.dashboard-section-heading h2 {
+  margin: 8px 0 25px;
+  font-size: 1.5rem;
+  letter-spacing: -.03em;
+}
+
+.dashboard-empty {
+  padding: 30px;
+  text-align: center;
+  background: #f8f9fc;
+  border-radius: 14px;
+}
+
+.dashboard-empty h3 {
+  margin-bottom: 8px;
+}
+
+.dashboard-empty p {
+  margin-bottom: 20px;
+  color: #747d8e;
+}
+
+.appointment-list {
+  display: grid;
+  gap: 12px;
+}
+
+.appointment-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #e7eaf0;
+  border-radius: 13px;
+}
+
+.appointment-label {
+  color: #7d8897;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.appointment-card h3 {
+  margin: 7px 0 5px;
+  font-size: 1rem;
+}
+
+.appointment-card p {
+  margin: 0;
+  color: #747d8e;
+  font-size: .85rem;
+}
+
+.appointment-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #747d8e;
+  font-size: .8rem;
+}
+
+.appointment-right strong {
+  color: #172033;
+}
+
+.appointment-status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fff4db;
+  color: #926300;
+}
+
+.status-confirmed {
+  background: #e8f8f1;
+  color: #087451;
+}
+
+.status-cancelled {
+  background: #fff0f0;
+  color: #a13e3e;
+}
+
+.status-completed {
+  background: #edf2ff;
+  color: #315dc7;
+}
+
+.dashboard-error {
+  padding: 15px;
+  border-radius: 10px;
+  background: #fff3f3;
+  color: #9b3f3f;
+}
+
+@media (max-width: 700px) {
+  .appointment-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appointment-right {
+    flex-wrap: wrap;
+  }
+}
