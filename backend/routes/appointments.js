@@ -51,7 +51,7 @@ router.get("/my", authenticateToken, async (req, res) => {
        FROM appointments a
        JOIN services s ON a.service_id = s.id
        WHERE a.user_id = $1
-       ORDER BY a.date ASC, a.time ASC`, 
+       ORDER BY a.appointment_date ASC, a.appointment_time ASC`,
       [req.user.userId]
     );
 
@@ -71,7 +71,7 @@ router.get("/", authenticateToken, requireAdmin, async (req, res) => {
        FROM appointments a
        JOIN users u ON a.user_id = u.id
        JOIN services s ON a.service_id = s.id
-       ORDER BY a.date ASC, a.time ASC`
+       ORDER BY a.appointment_date ASC, a.appointment_time ASC`
     );
 
     res.json(result.rows);

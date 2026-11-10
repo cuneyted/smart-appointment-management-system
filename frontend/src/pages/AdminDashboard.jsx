@@ -96,7 +96,7 @@ function AdminDashboard() {
 
         <div className="admin-nav-actions">
           <button onClick={() => navigate("/services")}>Services</button>
-          <button onClick={() => navigate("/dashboard")}>Dashboard</button>
+          <button onClick={() => navigate("/admin")}>Overview</button>
           <button
             onClick={() => {
               localStorage.removeItem("token");
@@ -111,6 +111,7 @@ function AdminDashboard() {
 
       <main className="admin-content">
         <section className="admin-heading">
+          <button className="admin-back-button" onClick={() => navigate("/admin")}>← Back to Overview</button>
           <span>ADMINISTRATION</span>
           <h1>Appointment management.</h1>
           <p>Review customer requests and manage appointment status.</p>

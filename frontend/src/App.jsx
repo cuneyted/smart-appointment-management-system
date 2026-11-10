@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Services from "./pages/Services";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminHome from "./pages/AdminHome";
 import AdminRoute from "./pages/AdminRoute";
 
 function App() {
@@ -16,14 +17,25 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/services" element={<Services />} />
+
         <Route
           path="/admin"
+          element={
+            <AdminRoute>
+              <AdminHome />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/appointments"
           element={
             <AdminRoute>
               <AdminDashboard />
             </AdminRoute>
           }
         />
+
         <Route
           path="/dashboard"
           element={

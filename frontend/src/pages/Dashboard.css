@@ -1,243 +1,566 @@
-.dashboard-page {
-  padding: 80px 7%;
-  min-height: calc(100vh - 80px);
+.customer-dashboard {
+  min-height: 100vh;
+  background: #f4f6fa;
+  color: #172033;
 }
 
-.dashboard-header {
-  max-width: 700px;
-  margin-bottom: 45px;
+.customer-navbar {
+  min-height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #090b10;
+  color: white;
 }
 
-.dashboard-header h1 {
-  margin: 10px 0;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  letter-spacing: -0.05em;
+.customer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.dashboard-header p {
-  color: #747d8e;
-}
-
-.dashboard-grid {
+.customer-brand-mark {
+  width: 39px;
+  height: 39px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  place-items: center;
+  border: 1px solid #2864e8;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.customer-brand strong,
+.customer-brand span {
+  display: block;
+}
+
+.customer-brand strong {
+  font-size: 15px;
+}
+
+.customer-brand span {
+  margin-top: 4px;
+  color: #8b96a8;
+  font-size: 9px;
+  letter-spacing: .13em;
+}
+
+.customer-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-nav-actions button {
+  padding: 10px 15px;
+  border: 1px solid #343b48;
+  border-radius: 8px;
+  background: transparent;
+  color: #e9edf5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.customer-nav-actions button:hover {
+  background: #202633;
+}
+
+.customer-content {
+  width: min(1280px, 86%);
+  margin: 0 auto;
+  padding: 58px 0 35px;
+}
+
+.customer-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+.customer-eyebrow {
+  color: #2864e8;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.customer-welcome h1 {
+  margin: 12px 0 9px;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -.05em;
+}
+
+.customer-welcome > div:first-child p,
+.customer-booking-intro p,
+.customer-history-heading p {
+  margin: 0;
+  color: #778195;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.customer-profile {
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 18px;
+  border: 1px solid #e1e6ef;
+  border-radius: 14px;
+  background: white;
+}
+
+.customer-avatar {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eaf0ff;
+  color: #2864e8;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.customer-profile strong,
+.customer-profile span,
+.customer-profile small {
+  display: block;
+}
+
+.customer-profile strong {
+  font-size: 13px;
+}
+
+.customer-profile span {
+  margin-top: 4px;
+  color: #778195;
+  font-size: 11px;
+}
+
+.customer-profile small {
+  margin-top: 5px;
+  color: #2864e8;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.customer-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 28px;
+}
+
+.customer-stat-card {
+  padding: 21px 23px;
+  border: 1px solid #e1e6ef;
+  border-radius: 14px;
+  background: white;
+}
+
+.customer-stat-card span,
+.customer-stat-card strong,
+.customer-stat-card small {
+  display: block;
+}
+
+.customer-stat-card span {
+  color: #778195;
+  font-size: 12px;
+}
+
+.customer-stat-card strong {
+  margin: 9px 0 5px;
+  font-size: 30px;
+  letter-spacing: -.04em;
+}
+
+.customer-stat-card small {
+  color: #a0a8b5;
+  font-size: 10px;
+}
+
+.customer-booking-intro,
+.customer-history-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.dashboard-card {
-  padding: 30px;
+.customer-booking-intro {
+  padding: 26px 28px;
+  margin-bottom: 17px;
+  border: 1px solid #dce5f5;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #ffffff 0%, #f0f5ff 100%);
+}
+
+.customer-booking-intro h2,
+.customer-history-heading h2 {
+  margin: 8px 0 6px;
+  font-size: 21px;
+  letter-spacing: -.03em;
+}
+
+.customer-primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px;
+  border: 1px solid #2864e8;
+  border-radius: 9px;
+  background: #2864e8;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.customer-primary-button:hover {
+  background: #174fc9;
+  transform: translateY(-1px);
+}
+
+.customer-primary-button:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.customer-booking-panel,
+.customer-history {
+  padding: 27px;
+  margin-top: 17px;
+  border: 1px solid #e1e6ef;
+  border-radius: 16px;
   background: white;
-  border: 1px solid #e5e8ef;
-  border-radius: 18px;
 }
 
-.dashboard-card > span {
-  color: #7a8395;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+.customer-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
 }
 
-.dashboard-card h2 {
-  margin: 18px 0 8px;
+.customer-panel-heading h2 {
+  margin: 7px 0 0;
+  font-size: 21px;
 }
 
-.dashboard-card p {
-  color: #747d8e;
-  margin-bottom: 20px;
+.customer-step {
+  color: #9aa4b4;
+  font-size: 11px;
+  font-weight: 700;
 }
 
-@media (max-width: 800px) {
-  .dashboard-page {
-    padding: 60px 5%;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
+.customer-form-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 16px;
 }
 
-.dashboard-appointments {
-  margin-top: 30px;
-  padding: 30px;
+.customer-form-grid label,
+.customer-notes-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.customer-form-grid select,
+.customer-form-grid input,
+.customer-notes-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #fbfcfe;
+  color: #172033;
+  font: inherit;
+  font-size: 12px;
+}
+
+.customer-form-grid select:focus,
+.customer-form-grid input:focus,
+.customer-notes-field textarea:focus {
+  outline: 2px solid #dce7ff;
+  border-color: #7da1f4;
+}
+
+.customer-notes-field {
+  margin: 18px 0;
+}
+
+.customer-notes-field label span {
+  color: #9aa4b4;
+  font-weight: 400;
+}
+
+.customer-notes-field textarea {
+  resize: vertical;
+}
+
+.customer-alert {
+  padding: 13px 15px;
+  margin: 13px 0;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.customer-alert-error {
+  background: #fff1f1;
+  color: #a13e3e;
+}
+
+.customer-alert-success {
+  background: #eaf9f2;
+  color: #087451;
+}
+
+.customer-history {
+  margin-top: 25px;
+}
+
+.customer-history-heading {
+  margin-bottom: 21px;
+}
+
+.customer-history-heading button {
+  padding: 9px 14px;
+  border: 1px solid #dfe4ec;
+  border-radius: 8px;
   background: white;
-  border: 1px solid #e3e7ee;
-  border-radius: 18px;
+  color: #354158;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-.dashboard-section-heading span {
-  color: #6d7890;
-  font-size: .7rem;
+.customer-history-heading button:hover {
+  background: #f3f6fc;
+}
+
+.customer-appointment-list {
+  display: grid;
+  gap: 11px;
+}
+
+.customer-appointment-card {
+  display: grid;
+  grid-template-columns: 125px minmax(180px, 1fr) 130px 105px;
+  align-items: center;
+  gap: 18px;
+  padding: 17px 18px;
+  border: 1px solid #e8ebf1;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.customer-appointment-date span,
+.customer-appointment-date strong,
+.customer-appointment-info h3,
+.customer-appointment-info p,
+.customer-appointment-price strong,
+.customer-appointment-price span {
+  display: block;
+}
+
+.customer-appointment-date span {
+  color: #778195;
+  font-size: 11px;
+}
+
+.customer-appointment-date strong {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.customer-appointment-label {
+  color: #9aa4b4;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: .12em;
 }
 
-.dashboard-section-heading h2 {
-  margin: 8px 0 25px;
-  font-size: 1.5rem;
-  letter-spacing: -.03em;
+.customer-appointment-info h3 {
+  margin: 5px 0;
+  font-size: 13px;
 }
 
-.dashboard-empty {
-  padding: 30px;
-  text-align: center;
-  background: #f8f9fc;
-  border-radius: 14px;
-}
-
-.dashboard-empty h3 {
-  margin-bottom: 8px;
-}
-
-.dashboard-empty p {
-  margin-bottom: 20px;
-  color: #747d8e;
-}
-
-.appointment-list {
-  display: grid;
-  gap: 12px;
-}
-
-.appointment-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  border: 1px solid #e7eaf0;
-  border-radius: 13px;
-}
-
-.appointment-label {
-  color: #7d8897;
-  font-size: .65rem;
-  font-weight: 800;
-  letter-spacing: .1em;
-}
-
-.appointment-card h3 {
-  margin: 7px 0 5px;
-  font-size: 1rem;
-}
-
-.appointment-card p {
+.customer-appointment-info p {
   margin: 0;
-  color: #747d8e;
-  font-size: .85rem;
+  color: #8993a3;
+  font-size: 11px;
+  overflow-wrap: anywhere;
 }
 
-.appointment-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: #747d8e;
-  font-size: .8rem;
+.customer-appointment-price strong {
+  font-size: 13px;
 }
 
-.appointment-right strong {
-  color: #172033;
+.customer-appointment-price span {
+  margin-top: 4px;
+  color: #9aa4b4;
+  font-size: 10px;
 }
 
-.appointment-status {
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: .7rem;
+.customer-status {
+  justify-self: start;
+  padding: 6px 9px;
+  border-radius: 30px;
+  font-size: 10px;
   font-weight: 800;
   text-transform: capitalize;
 }
 
-.status-pending {
+.customer-status-pending {
   background: #fff4db;
   color: #926300;
 }
 
-.status-confirmed {
+.customer-status-confirmed {
   background: #e8f8f1;
   color: #087451;
 }
 
-.status-cancelled {
+.customer-status-cancelled {
   background: #fff0f0;
   color: #a13e3e;
 }
 
-.status-completed {
+.customer-status-completed {
   background: #edf2ff;
   color: #315dc7;
 }
 
-.dashboard-error {
-  padding: 15px;
-  border-radius: 10px;
-  background: #fff3f3;
-  color: #9b3f3f;
+.customer-empty-state {
+  padding: 35px 20px;
+  border-radius: 12px;
+  background: #f7f9fc;
+  color: #778195;
+  text-align: center;
+  font-size: 13px;
 }
 
-@media (max-width: 700px) {
-  .appointment-card {
+.customer-empty-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #eaf0ff;
+  color: #2864e8;
+  font-size: 23px;
+}
+
+.customer-empty-state h3 {
+  margin: 0 0 7px;
+  color: #172033;
+}
+
+.customer-empty-state p {
+  margin: 0 0 18px;
+}
+
+.customer-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 25px 0;
+  color: #9aa4b4;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .customer-content {
+    width: 90%;
+  }
+
+  .customer-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .customer-welcome {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .appointment-right {
-    flex-wrap: wrap;
+  .customer-appointment-card {
+    grid-template-columns: 110px 1fr 100px;
+  }
+
+  .customer-status {
+    grid-column: 2 / 4;
   }
 }
 
-.dashboard-booking {
-  margin-top: 30px;
-  padding: 30px;
-  background: white;
-  border: 1px solid #e3e7ee;
-  border-radius: 18px;
-}
+@media (max-width: 600px) {
+  .customer-navbar {
+    padding: 0 5%;
+  }
 
-.dashboard-booking .booking-fields {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 18px;
-  margin: 25px 0 18px;
-}
+  .customer-content {
+    padding-top: 35px;
+  }
 
-.dashboard-booking label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: .84rem;
-  font-weight: 700;
-}
+  .customer-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
 
-.dashboard-booking select,
-.dashboard-booking input,
-.dashboard-booking textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 13px 14px;
-  border: 1px solid #dfe4ec;
-  border-radius: 10px;
-  background: #fbfcfe;
-  font: inherit;
-  color: #172033;
-}
+  .customer-stat-card {
+    padding: 16px;
+  }
 
-.dashboard-booking textarea {
-  resize: vertical;
-}
+  .customer-stat-card strong {
+    font-size: 25px;
+  }
 
-.booking-notes {
-  margin-bottom: 18px;
-}
+  .customer-booking-intro,
+  .customer-history-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
-.dashboard-success {
-  margin: 15px 0;
-  padding: 13px 15px;
-  border-radius: 10px;
-  background: #ecfaf5;
-  color: #087451;
-}
+  .customer-booking-intro {
+    padding: 21px;
+  }
 
-@media (max-width: 800px) {
-  .dashboard-booking .booking-fields {
+  .customer-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .customer-booking-panel,
+  .customer-history {
+    padding: 19px;
+  }
+
+  .customer-appointment-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .customer-appointment-info {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .customer-status {
+    grid-column: auto;
+  }
+
+  .customer-footer {
+    flex-direction: column;
   }
 }
