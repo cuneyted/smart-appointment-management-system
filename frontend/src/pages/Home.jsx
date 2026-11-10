@@ -18,7 +18,8 @@ function Home() {
         <div className="nav-links">
           <a href="/services">Services</a>
           <a href="#platform">Platform</a>
-          <a href="#about">About</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </div>
 
         <div className="nav-actions">
@@ -92,77 +93,27 @@ function Home() {
             </div>
           </div>
 
-          <div className="product-preview">
-            <div className="preview-header">
+
+          <div className="hero-visual">
+            <img
+              className="hero-photo"
+              src="/src/assets/smartbook-team.jpg"
+              alt="Professionals collaborating in a modern office"
+            />
+
+            <div className="hero-photo-label">
+              <span>SMARTBOOK · APPOINTMENT MANAGEMENT</span>
+              <h3>A better way to manage every appointment.</h3>
+              <p>From the first booking to the final confirmation.</p>
+            </div>
+
+            <div className="hero-floating-card">
+              <div className="hero-floating-icon">✓</div>
               <div>
-                <span>SMARTBOOK</span>
-                <h3>Appointment Overview</h3>
+                <strong>Booking experience</strong>
+                <small>Simple. Organized. Reliable.</small>
               </div>
-
-              <div className="preview-dot"></div>
-            </div>
-
-            <div className="preview-stats">
-              <div className="preview-stat">
-                <span>Today</span>
-                <strong>04</strong>
-              </div>
-
-              <div className="preview-stat">
-                <span>Confirmed</span>
-                <strong>03</strong>
-              </div>
-
-              <div className="preview-stat">
-                <span>Pending</span>
-                <strong>01</strong>
-              </div>
-            </div>
-
-            <div className="preview-list">
-              <div className="preview-item">
-                <div className="preview-time">10:30</div>
-
-                <div className="preview-info">
-                  <strong>IT Consultation</strong>
-                  <span>60 minutes</span>
-                </div>
-
-                <div className="preview-status confirmed">
-                  Confirmed
-                </div>
-              </div>
-
-              <div className="preview-item">
-                <div className="preview-time">13:00</div>
-
-                <div className="preview-info">
-                  <strong>Web Development</strong>
-                  <span>60 minutes</span>
-                </div>
-
-                <div className="preview-status pending">
-                  Pending
-                </div>
-              </div>
-
-              <div className="preview-item">
-                <div className="preview-time">16:30</div>
-
-                <div className="preview-info">
-                  <strong>Career Consultation</strong>
-                  <span>45 minutes</span>
-                </div>
-
-                <div className="preview-status confirmed">
-                  Confirmed
-                </div>
-              </div>
-            </div>
-
-            <div className="preview-footer">
-              <span>Live system preview</span>
-              <span>CE Digital Labs</span>
+              <span className="hero-floating-dot"></span>
             </div>
           </div>
         </section>

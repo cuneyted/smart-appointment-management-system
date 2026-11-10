@@ -267,3 +267,121 @@
   .booking-actions { flex-direction: column-reverse; }
   .booking-cancel, .booking-submit { width: 100%; }
 }
+
+/* Professional service photography */
+.service-card {
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #cbd8ef;
+  box-shadow: 0 18px 40px rgba(23, 32, 51, .09);
+}
+
+.service-card-image {
+  height: 165px;
+  margin-bottom: 22px;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #edf2f8;
+}
+
+.service-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.045);
+}
+
+.service-card h2 {
+  margin-top: 18px;
+}
+
+.service-button {
+  background: #2563eb;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.service-button:hover {
+  background: #174fc9;
+  transform: translateY(-1px);
+}
+
+/* Strong image zoom effect */
+.service-card-image {
+  overflow: hidden;
+}
+
+.service-card-image img {
+  transition: transform .7s cubic-bezier(.2,.7,.3,1);
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.40);
+}
+
+/* Expand service photos on hover */
+.service-card {
+  position: relative;
+  overflow: visible;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+
+.service-card:hover {
+  z-index: 20;
+  box-shadow: 0 18px 45px rgba(23, 32, 51, .13);
+}
+
+.service-card-image {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.service-card-image img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform .6s cubic-bezier(.2,.7,.3,1),
+              box-shadow .6s ease;
+}
+
+.service-card:hover .service-card-image img {
+  z-index: 30;
+  transform: scale(1.35);
+  box-shadow: 0 15px 35px rgba(0,0,0,.22);
+  border-radius: 13px;
+}
+
+/* Restore the original contained image zoom */
+.service-card {
+  overflow: hidden;
+}
+
+.service-card-image {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.service-card-image img {
+  position: static;
+  z-index: auto;
+  transform: scale(1);
+  transition: transform .65s cubic-bezier(.2,.7,.3,1);
+}
+
+.service-card:hover .service-card-image img {
+  z-index: auto;
+  transform: scale(1.30);
+  box-shadow: none;
+}

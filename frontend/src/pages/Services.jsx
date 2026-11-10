@@ -2,6 +2,27 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Services.css";
 
+import itConsultationImage from "../assets/services/it-consultation.jpg";
+import webDevelopmentImage from "../assets/services/web-development.jpg";
+import uiUxImage from "../assets/services/ui-ux-design.jpg";
+import productStrategyImage from "../assets/services/product-strategy.jpg";
+import performanceAuditImage from "../assets/services/performance-audit.jpg";
+import careerConsultationImage from "../assets/services/career-consultation.jpg";
+import projectPlanningImage from "../assets/services/project-planning.jpg";
+import technicalSupportImage from "../assets/services/technical-support.jpg";
+
+const serviceImages = {
+  1: itConsultationImage,
+  2: webDevelopmentImage,
+  3: uiUxImage,
+  4: productStrategyImage,
+  5: performanceAuditImage,
+  6: careerConsultationImage,
+  7: projectPlanningImage,
+  8: technicalSupportImage
+};
+
+
 function Services() {
   const navigate = useNavigate();
   const [services, setServices] = useState([]);
@@ -143,6 +164,13 @@ function Services() {
             <div className="services-grid">
               {services.map((service) => (
                 <article className="service-card" key={service.id}>
+                  <div className="service-card-image">
+                    <img
+                      src={serviceImages[service.id]}
+                      alt={service.name}
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="service-card-top">
                     <span className="service-tag">AVAILABLE</span>
                     <span className="service-price">{Number(service.price).toFixed(2)} zł</span>

@@ -7,6 +7,7 @@ const pool = require("./db");
 const authRoutes = require("../routes/auth");
 const serviceRoutes = require("../routes/services");
 const appointmentRoutes = require("../routes/appointments");
+const adminRoutes = require("../routes/admin");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/services", serviceRoutes);
 app.use("/api/appointments", appointmentRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.get("/api/health", async (req, res) => {
   try {
